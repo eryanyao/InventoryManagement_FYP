@@ -1,0 +1,114 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="im_MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="/assets/css/w3.css" rel="stylesheet" />
+    <link href="/assets/css/nav.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div class="w3-bar w3-top w3-black w3-large" style="z-index: 4">
+                <%-- <span class="w3-button w3-xlarge w3-black w3-hover-white w3-left" onclick="w3_open()"><i class="fa fa-bars"></i></span>--%>
+                <span class="w3-bar-item w3-left w3-xlarge">Inventory Management</span>
+                <asp:Button type="submit" name="logout-submit" Text="Logout" runat="server" ID="btnLogout"
+                    OnClick="btnLogout_Click" class="w3-bar-item w3-button w3-red w3-hover-white w3-xlarge  w3-right" />
+            </div>
+
+            <!-- Sidebar/menu -->
+            <nav class="w3-sidebar w3-collapse w3-nav w3- w3-animate-left w3-border w3-light-gray"
+                style="z-index: 3; width: 300px;" id="mySidebar">
+                <br />
+                <div class="w3-container w3-row">
+                    <h4><strong>Administrator Page</strong></h4>
+                    <div class="w3-col s8 w3-bar">
+                        <span>Welcome, <strong></strong></span>
+                        <br />
+                        <br />
+                    </div>
+                </div>
+
+
+
+                <div class="w3-bar-block">
+                    <a href="/im/dashboard.aspx" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bell fa-dashboard nav-icon">
+                    </i>&nbsp;Dashboard </a>
+                    <a href="/im/brands/Default.aspx" class="w3-bar-item w3-button w3-padding"><i class="fa fa-tags nav-icon">
+                    </i>&nbsp;Brands </a>
+                    <a href="/im/category/Default.aspx" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bell fa-cubes nav-icon">
+                    </i>&nbsp;Category </a>
+
+                    <div>
+                        <a class="w3-bar-item w3-button w3-padding" onclick="myAccordion('demo')" href="javascript:void(0)">
+                            <i class="fa fa-shopping-basket nav-icon"></i>&nbsp;Product <i class="fa fa-caret-down">
+                            </i></a>
+                        <div id="demo" class="w3-hide">
+                            <a href="/im/products/addProduct.aspx" class="w3-bar-item w3-button w3-padding w3-white">
+                                <i class="fa fa-check fa-plus-circle"></i>&nbsp;Add Product </a>
+                            <a href="/im/products/Default.aspx" class="w3-bar-item w3-button w3-padding w3-white">
+                                <i class="fa fa-book fa-check-circle"></i>&nbsp;Manage Products</a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <a class="w3-bar-item w3-button w3-padding" onclick="myAccordion('demo1')" href="javascript:void(0)">
+                            <i class="fa fa-shopping-cart nav-icon"></i>&nbsp;Order <i class="fa fa-caret-down">
+                            </i></a>
+                        <div id="demo1" class="w3-hide">
+                            <a href="/im/order/addOrder.aspx" class="w3-bar-item w3-button w3-padding w3-white">
+                                <i class="fa fa-check fa-plus-circle"></i>&nbsp;Add Order </a>
+                            <a href="/im/order/Default.aspx" class="w3-bar-item w3-button w3-padding w3-white"><i
+                                class="fa fa-book fa-check-circle"></i>&nbsp;Manage Orders</a>
+                        </div>
+                    </div>
+                     <a runat="server" id="reportUrl" class="w3-bar-item w3-button w3-padding"><i class="fa fa-book nav-icon">
+                    </i>&nbsp;Report </a>
+                     <a href="/im/company/Default.aspx" class="w3-bar-item w3-button w3-padding"><i class="fa fa-building nav-icon">
+                    </i>&nbsp;Company </a>
+                    <br />
+                </div>
+
+                <div class="w3-container">
+                    <h5><strong>Product</strong></h5>
+                </div>
+                <div class="w3-bar-block">
+                </div>
+
+                <div class="w3-bar-block">
+                    <a href="about.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-info fa-fw">
+                    </i>&nbsp;About Us</a>
+                    <a href="services_preview.php?id=1" class="w3-bar-item w3-button w3-padding"><i class="fa fa-briefcase fa-fw">
+                    </i>&nbsp;Services</a>
+                    <a href="contact.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-phone fa-fw">
+                    </i>&nbsp;Contact Us</a><br>
+                </div>
+
+            </nav>
+
+            <div class="w3-main" style="margin-left: 310px; margin-top: 40px; margin-right: 10px;">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </form>
+    <script>
+        function myAccordion(id) {
+            var x = document.getElementById(id);
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+                x.previousElementSibling.className += " w3-theme";
+            } else {
+                x.className = x.className.replace("w3-show", "");
+                x.previousElementSibling.className =
+                x.previousElementSibling.className.replace(" w3-theme", "");
+            }
+        }
+    </script>
+</body>
+</html>
