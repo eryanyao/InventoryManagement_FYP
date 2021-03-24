@@ -23,7 +23,7 @@ public partial class im_order_invoice : System.Web.UI.Page
                 if (conn.State == ConnectionState.Closed)
                 {
                     conn.Open();
-                    string queryBrand = "SELECT bill.gross_amount as gross,bill.service_amount as service,bill.net_amount as net,bill.discount as discount,bill.date_time as datetime, customer.customer_name as name, customer.customer_phone as phone,customer.customer_address as address FROM bill INNER JOIN customer ON bill.customer_id = customer.Id WHERE bill.id = @id";
+                    string queryBrand = "SELECT bill.gross_amount as gross,bill.service_amount as service,bill.net_amount as net,bill.discount as discount,bill.date_time as datetime, bill.user_id as usr, customer.customer_name as name, customer.customer_phone as phone,customer.customer_address as address FROM bill INNER JOIN customer ON bill.customer_id = customer.Id WHERE bill.id = @id";
                     SqlCommand searchCmd = new SqlCommand(queryBrand, conn);
                     searchCmd.Parameters.AddWithValue("id", id);
                     searchCmd.ExecuteNonQuery();
@@ -43,6 +43,7 @@ public partial class im_order_invoice : System.Web.UI.Page
                         lblGross.Text = dr["gross"].ToString();
                         lblService.Text = dr["service"].ToString();
                         lblTotal.Text = dr["net"].ToString();
+                        lblUser.Text = dr["usr"].ToString();
                     }
 
                     conn.Close();

@@ -70,7 +70,7 @@
     <div id="divTable" class="w3-row-padding w3-margin-bottom w3-light-grey w3-border"
         style="margin-left: 20px; margin-right: 20px; margin-top: 20px;" runat="server">
         <div class="w3-container">
-            <h2 class="w3-text-black"><strong>Category Table</strong></h2>
+            <h2 class="w3-text-black"><strong>Categories</strong></h2>
             <table id="example" class="display" style="width: 99%;">
                 <thead>
                     <tr>

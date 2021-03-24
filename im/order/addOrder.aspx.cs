@@ -370,7 +370,7 @@ public partial class im_order_addOrder2 : System.Web.UI.Page
         {
             conn.Open();
 
-            string add2 = "INSERT INTO bill (customer_id,date_time,gross_amount,service_amount,net_amount,discount)values(@id,@date,@gross,@service,@net,@discount)";
+            string add2 = "INSERT INTO bill (customer_id,date_time,gross_amount,service_amount,net_amount,discount,user_id)values(@id,@date,@gross,@service,@net,@discount,@userId)";
             SqlCommand cmd3 = new SqlCommand(add2, conn);
             cmd3.Parameters.AddWithValue("id", customer_id);
             cmd3.Parameters.AddWithValue("date", DateTime.Now);
@@ -378,6 +378,7 @@ public partial class im_order_addOrder2 : System.Web.UI.Page
             cmd3.Parameters.AddWithValue("service", txtService.Text);
             cmd3.Parameters.AddWithValue("net", txtNet.Text);
             cmd3.Parameters.AddWithValue("discount", txtDiscount.Text);
+            cmd3.Parameters.AddWithValue("userId", Session["Id"].ToString());
 
             cmd3.ExecuteNonQuery();
 

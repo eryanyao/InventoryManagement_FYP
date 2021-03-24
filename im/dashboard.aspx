@@ -13,51 +13,58 @@
     <div class="w3-row-padding w3-margin-bottom">
         <div class="w3-quarter">
             <div class="w3-container w3-red w3-padding-16">
-                <div class="w3-left"><i class="fa fa-comment w3-xxxlarge"></i></div>
+                <div class="w3-left"><i class="fa fa-shopping-basket w3-xxxlarge"></i></div>
                 <div class="w3-right">
                     <h3>
                         <asp:Label Text="10" ID="lblProduct" runat="server" /></h3>
                 </div>
                 <div class="w3-clear"></div>
                 <h4>Total Products</h4>
-                <a href="/im/products/Default.aspx" class="w3-button w3-white w3-hover-light-grey" style="width: 100%;">More Details
+                <a href="/im/products/Default.aspx" class="w3-button w3-white w3-hover-light-grey"
+                    style="width: 100%;">More Details
                     &nbsp; <i class="fa fa-arrow-right"></i></a>
             </div>
         </div>
         <div class="w3-quarter">
             <div class="w3-container w3-blue w3-padding-16">
-                <div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>
+                <div class="w3-left"><i class="fa fa-shopping-cart w3-xxxlarge"></i></div>
                 <div class="w3-right">
-                    <h3><asp:Label Text="10" ID="lblOrder" runat="server" /></h3>
+                    <h3>
+                        <asp:Label Text="10" ID="lblOrder" runat="server" /></h3>
                 </div>
                 <div class="w3-clear"></div>
                 <h4>Total Paid Orders</h4>
-                <a href="/im/order/Default.aspx" class="w3-button w3-white w3-hover-light-grey" style="width: 100%;">More Details
+                <a href="/im/order/Default.aspx" class="w3-button w3-white w3-hover-light-grey" style="width: 100%;">
+                    More Details
                     &nbsp; <i class="fa fa-arrow-right"></i></a>
             </div>
 
         </div>
         <div class="w3-quarter">
             <div class="w3-container w3-teal w3-padding-16">
-                <div class="w3-left"><i class="fa fa-share-alt w3-xxxlarge"></i></div>
+                <div class="w3-left"><i class="fa fa-cubes  w3-xxxlarge"></i></div>
                 <div class="w3-right">
-                    <h3><asp:Label Text="10" ID="lblCategory" runat="server" /></h3>
+                    <h3>
+                        <asp:Label Text="10" ID="lblCategory" runat="server" /></h3>
                 </div>
                 <div class="w3-clear"></div>
                 <h4>Total Categorys</h4>
-                <a href="/im/category/Default.aspx" class="w3-button w3-white w3-hover-light-grey" style="width: 100%;">More Details
+                <a href="/im/category/Default.aspx" class="w3-button w3-white w3-hover-light-grey"
+                    style="width: 100%;">More Details
                     &nbsp; <i class="fa fa-arrow-right"></i></a>
             </div>
         </div>
         <div class="w3-quarter">
             <div class="w3-container w3-orange w3-text-white w3-padding-16">
-                <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
+                <div class="w3-left"><i class="fa fa-tags w3-xxxlarge"></i></div>
                 <div class="w3-right">
-                    <h3><asp:Label Text="10" ID="lblBrand" runat="server" /></h3>
+                    <h3>
+                        <asp:Label Text="10" ID="lblBrand" runat="server" /></h3>
                 </div>
                 <div class="w3-clear"></div>
                 <h4>Total Brands</h4>
-                <a href="/im/brand/Default.aspx" class="w3-button w3-white w3-hover-light-grey" style="width: 100%;">More Details
+                <a href="/im/brand/Default.aspx" class="w3-button w3-white w3-hover-light-grey" style="width: 100%;">
+                    More Details
                     &nbsp; <i class="fa fa-arrow-right"></i></a>
             </div>
         </div>
@@ -67,18 +74,73 @@
         margin-right: 20px; margin-top: 20px;"
         runat="server">
         <div class="w3-container">
-            <h2 class="w3-text-black"><strong>Analysis</strong></h2>
+            <h2 class="w3-text-black"><strong>Sales Analysis</strong></h2>
+            <div>
+                <table>
+                    <tr>
+                        <td><strong>Year</strong></td>
+                        <td>
+                            <asp:DropDownList ID="ddlYear" runat="server" CssClass="w3-input w3-border w3-border-dark-gray"
+                                DataSourceID="sqlYear" DataTextField="year" DataValueField="year" Width="150px">
+                            </asp:DropDownList>
+                        </td>
+                        <td><strong>Month</strong></td>
+                        <td>
+                            <asp:DropDownList ID="ddlMonth" runat="server" CssClass="w3-input w3-border w3-border-dark-gray"
+                                DataSourceID="sqlMonth" DataTextField="month" DataValueField="Id" Width="150px">
+                            </asp:DropDownList>
+                            <td>
+                                <asp:Button ID="btnDateSubmit" Text="Submit" CssClass="w3-button w3-border w3-green"
+                                    runat="server" OnClick="btnDateSubmit_Click" /></td>
+                    </tr>
+                </table>
 
-            <div id="chart_div" class="w3-left" style="width: 50%; height: 500px;"></div>
-           
-            <div id="piechart"  class="w3-right w3-margin-bottom" style="width: 48%; height: 500px;"></div>
+
+
+
+            </div>
+
+            <br />
+            <div id="piechart2" class="w3-left w3-margin-bottom" style="width: 49%; height: 500px;">
+            </div>
+
+            <div id="piechart" class="w3-right w3-margin-bottom" style="width: 49%; height: 500px;">
+            </div>
+
+            <div id="chart_div" class="w3-left w3-margin-bottom w3-margin-top" style="width: 49%;
+                height: 500px;">
+            </div>
+            <div id="" class="w3-right w3-margin-bottom w3-margin-top" style="width: 49%;
+                height: 500px;">
+                <div class="w3-container w3-white" style="height: 500px;">
+                    <h3><strong>Top Performance</strong></h3>
+                    <table class="w3-table w3-white w3-bordered w3-hoverable w3-table-all">
+                        <tr>
+                            <td style="width: 30%"><b>Top Sales Product</b></td>
+                            <td>
+                                <asp:Label ID="lblTopSales" runat="server"></asp:Label></td>
+                        </tr>
+                        <tr>
+                            <td><b>Top Brand</b></td>
+                            <td>
+                                <asp:Label ID="lblTopBrand" runat="server"></asp:Label></td>
+                        </tr>
+                        <tr>
+                            <td><b>Top Category</b></td>
+                            <td>
+                                <asp:Label ID="lblTopCategory" runat="server"></asp:Label></td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
             <br />
             <br />
 
         </div>
     </div>
 
-     <div class="w3-row-padding w3-margin-bottom w3-light-grey w3-border" style="margin-left: 20px;
+    <div class="w3-row-padding w3-margin-bottom w3-light-grey w3-border" style="margin-left: 20px;
         margin-right: 20px; margin-top: 20px;"
         runat="server">
         <div class="w3-container">
@@ -86,7 +148,8 @@
             <table class="w3-table w3-white w3-bordered w3-hoverable w3-table-all">
                 <thead>
                     <tr>
-                        <th>Product ID</th>
+                        <th style="width: 150px;">Product ID</th>
+                        <th style="width: 400px;">Image</th>
                         <th>Product Name</th>
                         <th>Quantity</th>
                         <th>Action</th>
@@ -98,7 +161,10 @@
                         <ItemTemplate>
                             <tr>
                                 <td>
-                                     <asp:Label Text='<%# Eval("Id")%>' runat="server" />
+                                    <asp:Label Text='<%# Eval("Id")%>' runat="server" />
+                                </td>
+                                <td>
+                                    <asp:Image ImageUrl='<%# img(Eval("product_img").ToString())%>' Height="100px" runat="server" />
                                 </td>
                                 <td>
                                     <asp:Label Text='<%# Eval("product_name")%>' runat="server" />
@@ -107,7 +173,8 @@
                                     <asp:Label Text='<%# Eval("product_quantity")%>' runat="server" />
                                 </td>
                                 <td>
-                                    <asp:Button Text="View" CssClass="w3-blue w3-button" runat="server" />
+                                    <asp:Button Text="Replenishment" CommandArgument='<%# Eval("id")%>' OnCommand="btnReplenish_Command"
+                                        CssClass="w3-blue w3-button" runat="server" />
                                 </td>
                             </tr>
                         </ItemTemplate>
@@ -126,7 +193,8 @@
             <table class="w3-table w3-white w3-bordered w3-hoverable w3-table-all">
                 <thead>
                     <tr>
-                        <th>Product ID</th>
+                        <th style="width: 150px;">Product ID</th>
+                        <th style="width: 400px;">Image</th>
                         <th>Product Name</th>
                         <th>Quantity</th>
                         <th>Action</th>
@@ -138,7 +206,10 @@
                         <ItemTemplate>
                             <tr>
                                 <td>
-                                     <asp:Label Text='<%# Eval("Id")%>' runat="server" />
+                                    <asp:Label Text='<%# Eval("Id")%>' runat="server" />
+                                </td>
+                                <td>
+                                    <asp:Image ImageUrl='<%# img(Eval("product_img").ToString())%>' Height="100px" runat="server" />
                                 </td>
                                 <td>
                                     <asp:Label Text='<%# Eval("product_name")%>' runat="server" />
@@ -147,7 +218,8 @@
                                     <asp:Label Text='<%# Eval("product_quantity")%>' runat="server" />
                                 </td>
                                 <td>
-                                    <asp:Button Text="View" CssClass="w3-blue w3-button" runat="server" />
+                                    <asp:Button Text="Replenishment" ID="btnReplenish" CommandArgument='<%# Eval("id")%>'
+                                        OnCommand="btnReplenish_Command" CssClass="w3-blue w3-button" runat="server" />
                                 </td>
                             </tr>
                         </ItemTemplate>
@@ -158,8 +230,16 @@
         </div>
     </div>
 
-    <asp:SqlDataSource runat="server" ID="SqlProduct" ConnectionString="<%$ ConnectionStrings:connStr %>" SelectCommand="SELECT * FROM product WHERE product_quantity <= 5 AND product_quantity >= 1" />
-     <asp:SqlDataSource runat="server" ID="SqlOutOfStock" ConnectionString="<%$ ConnectionStrings:connStr %>" SelectCommand="SELECT * FROM product WHERE product_quantity = 0" />
+    <asp:SqlDataSource runat="server" ID="SqlProduct" ConnectionString="<%$ ConnectionStrings:connStr %>"
+        SelectCommand="SELECT * FROM product WHERE product_quantity <= 5 AND product_quantity >= 1" />
+    <asp:SqlDataSource runat="server" ID="SqlOutOfStock" ConnectionString="<%$ ConnectionStrings:connStr %>"
+        SelectCommand="SELECT * FROM product WHERE product_quantity = 0" />
+    <asp:SqlDataSource ID="sqlYear" runat="server" DataSourceMode="DataReader" ConnectionString="<%$ ConnectionStrings:connStr%>"
+        SelectCommand="SELECT YEAR(date_time) as year FROM bill GROUP BY YEAR(date_time) ORDER BY YEAR(date_time) DESC">
+    </asp:SqlDataSource>
+    <asp:SqlDataSource ID="sqlMonth" runat="server" DataSourceMode="DataReader" ConnectionString="<%$ ConnectionStrings:connStr%>"
+        SelectCommand="SELECT * FROM report"></asp:SqlDataSource>
+
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
         google.charts.load('current', { 'packages': ['corechart'] });
@@ -167,24 +247,30 @@
 
         function drawVisualization() {
             // Some raw data (not necessarily accurate)
-            var data = google.visualization.arrayToDataTable([
-              ['Month', 'Bolivia', 'Ecuador', 'Madagascar', 'Papua New Guinea', 'Rwanda', 'Average'],
-              ['2004/05', 165, 938, 522, 998, 450, 614.6],
-              ['2005/06', 135, 1120, 599, 1268, 288, 682],
-              ['2006/07', 157, 1167, 587, 807, 397, 623],
-              ['2007/08', 139, 1110, 615, 968, 215, 609.4],
-              ['2008/09', 136, 691, 629, 1026, 366, 569.6]
-            ]);
+            var productName = '<%= this.jsSerializer.Serialize(this.productName) %>';
+            var productQty = '<%= this.jsSerializer.Serialize(this.productQty) %>';
+
+            var showName = JSON.parse(productName);
+            var showQty = JSON.parse(productQty);
+
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Product');
+            data.addColumn('number', 'Qty');
+
+            for (i = 0; i < showName.length; i++) {
+                data.addRow([showName[i], showQty[i]]);
+            }
 
             var options = {
                 title: 'Total Sales Analysis',
-                vAxis: { title: 'Cups' },
-                hAxis: { title: 'Month' },
-                seriesType: 'bars',
-                series: { 5: { type: 'line' } }
+                hAxis: { format: '0' },
+                vAxis: { format: '0' },
+                is3D: true,
+
+
             };
 
-            var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+            var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
             chart.draw(data, options);
         }
 
@@ -192,20 +278,52 @@
 
         function drawChart() {
 
-            var data = google.visualization.arrayToDataTable([
-              ['Task', 'Hours per Day'],
-              ['Work', 11],
-              ['Eat', 2],
-              ['Commute', 2],
-              ['Watch TV', 2],
-              ['Sleep', 7]
-            ]);
+            var categoryName = '<%= this.jsSerializer.Serialize(this.categoryName) %>';
+            var categoryQty = '<%= this.jsSerializer.Serialize(this.categoryQty) %>';
+
+            var showName = JSON.parse(categoryName);
+            var showQty = JSON.parse(categoryQty);
+
+
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Category');
+            data.addColumn('number', 'Qty');
+
+            for (i = 0; i < showName.length; i++) {
+                data.addRow([showName[i], showQty[i]]);
+            }
 
             var options = {
-                title: 'My Daily Activities'
+                title: 'Category Sales Analysis'
             };
 
             var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+            chart.draw(data, options);
+        }
+        google.charts.setOnLoadCallback(drawChart2);
+        function drawChart2() {
+
+            var categoryName = '<%= this.jsSerializer.Serialize(this.brandName) %>';
+            var categoryQty = '<%= this.jsSerializer.Serialize(this.brandQty) %>';
+
+            var showName = JSON.parse(categoryName);
+            var showQty = JSON.parse(categoryQty);
+
+
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Brand');
+            data.addColumn('number', 'Qty');
+
+            for (i = 0; i < showName.length; i++) {
+                data.addRow([showName[i], showQty[i]]);
+            }
+
+            var options = {
+                title: 'Phone Brand Sales Analysis'
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
 
             chart.draw(data, options);
         }

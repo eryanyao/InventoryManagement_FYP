@@ -25,7 +25,7 @@ public partial class im_products_addProduct : System.Web.UI.Page
             if (rf)
             {
                 int record = Int16.Parse(dr["Id"].ToString()) + 1;
-                //lblID.Text = record.ToString();
+                lblID.Text = record.ToString();
             }
             else
             {

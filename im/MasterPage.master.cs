@@ -13,6 +13,16 @@ public partial class im_MasterPage : System.Web.UI.MasterPage
         if (!IsPostBack)
         {
             reportUrl.HRef = "/im/report/Default.aspx?year=" + thisYear;
+            if(Session["username"] != null)
+            {
+                string username = Session["username"].ToString();
+                lblUsername.Text = username;         
+            }
+            else
+            {
+                Response.Redirect("/login.aspx");
+            }
+            
         }
     }
     protected void btnLogout_Click(object sender, EventArgs e)

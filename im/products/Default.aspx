@@ -9,7 +9,8 @@
     </header>
 
     <div class="w3-container">
-        <asp:Button Text="Add Product" runat="server" ID="btnAdd" CssClass="w3-button w3-border w3-green" OnClick="btnAdd_Click" />
+        <asp:Button Text="Add Product" runat="server" ID="btnAdd" CssClass="w3-button w3-border w3-green" Width="150px" OnClick="btnAdd_Click" />
+        <asp:Button Text="Replenishment" runat="server" ID="btnPurchase" CssClass="w3-button w3-border w3-green" Width="150px" OnClick="btnPurchase_Click" />
     </div>
 
       <asp:SqlDataSource ID="brandSQL" runat="server" ConnectionString="<%$ ConnectionStrings:connStr %>" SelectCommand="SELECT * FROM product" UpdateCommand="UPDATE brand SET brand_name = @brand_name, brand_status=@brand_status WHERE Id = @id" DeleteCommand="DELETE FROM brand WHERE Id=@Id;">

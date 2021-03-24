@@ -28,7 +28,7 @@
                 <div class="w3-container w3-row">
                     <h4><strong>Administrator Page</strong></h4>
                     <div class="w3-col s8 w3-bar">
-                        <span>Welcome, <strong></strong></span>
+                        <span>Welcome, <strong><asp:Label ID="lblUsername" runat="server"></asp:Label></strong></span>
                         <br />
                         <br />
                     </div>
@@ -51,6 +51,8 @@
                         <div id="demo" class="w3-hide">
                             <a href="/im/products/addProduct.aspx" class="w3-bar-item w3-button w3-padding w3-white">
                                 <i class="fa fa-check fa-plus-circle"></i>&nbsp;Add Product </a>
+                             <a href="/im/products/purchase.aspx" class="w3-bar-item w3-button w3-padding w3-white">
+                                <i class="fa fa-check fa-plus-circle"></i>&nbsp;Replenishment </a>
                             <a href="/im/products/Default.aspx" class="w3-bar-item w3-button w3-padding w3-white">
                                 <i class="fa fa-book fa-check-circle"></i>&nbsp;Manage Products</a>
                         </div>
@@ -71,10 +73,14 @@
                     </i>&nbsp;Report </a>
                      <a href="/im/company/Default.aspx" class="w3-bar-item w3-button w3-padding"><i class="fa fa-building nav-icon">
                     </i>&nbsp;Company </a>
+                    <a runat="server" onserverclick="btnLogout_Click" id="aBtnLogout" class="w3-bar-item w3-button w3-padding">
+                        <i class="fa fa-sign-out nav-icon"></i>&nbsp;Logout
+                    </a>
+                        
                     <br />
                 </div>
 
-                <div class="w3-container">
+                <%--<div class="w3-container">
                     <h5><strong>Product</strong></h5>
                 </div>
                 <div class="w3-bar-block">
@@ -87,7 +93,7 @@
                     </i>&nbsp;Services</a>
                     <a href="contact.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-phone fa-fw">
                     </i>&nbsp;Contact Us</a><br>
-                </div>
+                </div>--%>
 
             </nav>
 

@@ -108,4 +108,9 @@ public partial class im_products_Default : System.Web.UI.Page
         Response.Write("<script>alert('Product: " + lblName.Text + ". Delete Successfully!');location.href='/im/product/Default.aspx';</script>");
      
     }
+
+    protected void btnPurchase_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("purchase.aspx");
+    }
 }

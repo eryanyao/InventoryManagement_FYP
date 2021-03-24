@@ -7,59 +7,96 @@
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server">
-    <div>
-    <div class="w3-container">
-            <h2 class="w3-text-black"><strong>Sales Performance</strong></h2>
-            <div id="columnchart_material"></div>
-            <br />
-        </div>
-    </div>
-        <div>
-            <asp:GridView ID="gvTable" AutoGenerateColumns="false" runat="server">
-                <Columns>
-                <asp:BoundField ItemStyle-width="150px" HeaderText="Months" DataField="mon"/>
-                <asp:BoundField ItemStyle-width="150px" HeaderText="Total" DataField="total" />
-            </Columns>
-            </asp:GridView>
-        </div>
-        <asp:HiddenField ID="HiddenField1" runat="server" />
-    </form>
+
+    <div id="chart_div" style="width: 49%; height: 500px;">
+
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+
+            google.charts.load('current', { 'packages': ['corechart'] });
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+                var categoryName = '<%= this.jsSerializer.Serialize(this.categoryName) %>';
+                var categoryQty = '<%= this.jsSerializer.Serialize(this.categoryQty) %>';
+
+                var showName = JSON.parse(categoryName);
+                var showQty = JSON.parse(categoryQty);
 
 
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load('current', { 'packages': ['bar'] });
-        google.charts.setOnLoadCallback(drawChart);
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'Category');
+                data.addColumn('number', 'Qty');
 
-        function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-              ['Months', 'Sales'],
-              ['January', 1000],
-              ['Febraury', 1170],
-              ['March', 660],
-              ['April', 1030],
-              ['May', 1030],
-              ['June', 1030],
-              ['July', 1030],
-              ['August', 1030],
-              ['September', 1030],
-              ['October', 1030],
-              ['November', 1030],
-              ['December', 1030]
-            ]);
-
-            var options = {
-                chart: {
-                    title: 'Sales Performance',
-                    subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+                for (i = 0; i < showName.length; i++) {
+                    data.addRow([showName[i], showQty[i]]);
                 }
-            };
 
-            var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+                var options = {
+                    title: 'Category Sales Analysis',
+                    sliceVisibilityThreshold: .2
+                };
 
-            chart.draw(data, google.charts.Bar.convertOptions(options));
-        }
-    </script>
+                var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+                chart.draw(data, options);
+            }
+        </script>
+
+
+        <script type="text/javascript">
+            google.charts.load('current', { 'packages': ['corechart'] });
+            google.charts.setOnLoadCallback(drawVisualization);
+
+
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+                var categoryName = '<%= this.jsSerializer.Serialize(this.categoryName) %>';
+                var categoryQty = '<%= this.jsSerializer.Serialize(this.categoryQty) %>';
+
+                var showName = JSON.parse(total);
+                var showQty = JSON.parse(total);
+
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'Category');
+                data.addColumn('number', 'Qty');
+
+                data.addRows([
+                    ['Pepperoni', 33],
+                    ['Hawaiian', 26],
+                    ['Mushroom', 22],
+                    ['Sausage', 10], // Below limit.
+                    ['Anchovies', 9] // Below limit.
+                ]);
+
+                var options = {
+                    title: 'Category'
+                };
+
+                var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+                chart.draw(data, options);
+            }
+            google.charts.setOnLoadCallback(drawChart2);
+            function drawChart2() {
+
+                var data = google.visualization.arrayToDataTable([
+                  ['Task', 'Hours per Day'],
+                  ['Work', 11],
+                  ['Eat', 2],
+                  ['Commute', 2],
+                  ['Watch TV', 2],
+                  ['Sleep', 7]
+                ]);
+
+                var options = {
+                    title: 'Category'
+                };
+
+                var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
+
+                chart.draw(data, options);
+            }
+        </script>
 </body>
 </html>

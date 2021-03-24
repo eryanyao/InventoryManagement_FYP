@@ -25,12 +25,13 @@
     <div id="divForm" class="w3-row-padding w3-margin-bottom w3-light-grey w3-border" style="margin-left: 20px; margin-right: 20px; margin-top: 20px;" runat="server">
         <div class="w3-container">
             <h2 class="w3-text-black"><strong>Add new product</strong></h2>
-            <asp:Label Text="" ID="lblID" runat="server" />
+            <asp:Label Text="" ID="lblID" runat="server" Visible="false" />
             <p>
                 <asp:ValidationSummary CssClass="w3-text-red" runat="server" ValidationGroup="1" HeaderText="Please correct these entries:" />
             </p>
             <p>
                 <a class="w3-text-red">*All field are required.</a>
+               
             </p>
             <p>
                 <label class="w3-text-black"><b>Image</b></label>

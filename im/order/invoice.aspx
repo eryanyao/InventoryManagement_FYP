@@ -33,6 +33,8 @@
                                 <asp:Label ID="lblId" runat="server" /><br>
                                 Created:
                                 <asp:Label ID="lbldate" runat="server" /><br>
+                                Created by:
+                                <asp:Label ID="lblUser" runat="server" />
                             </td>
                         </tr>
                     </table>
