@@ -9,6 +9,7 @@
 
     <link href="/assets/css/signin.css" rel="stylesheet">
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/ico" href="/assets/image/login.png" />
 </head>
 <body class="text-center">
     <form class="form-signin" runat="server">

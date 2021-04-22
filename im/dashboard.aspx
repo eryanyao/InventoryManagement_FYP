@@ -150,7 +150,7 @@
                     <tr>
                         <th style="width: 150px;">Product ID</th>
                         <th style="width: 400px;">Image</th>
-                        <th>Product Name</th>
+                        <th style="width: 600px;">Product Name</th>
                         <th>Quantity</th>
                         <th>Action</th>
                     </tr>
@@ -195,7 +195,7 @@
                     <tr>
                         <th style="width: 150px;">Product ID</th>
                         <th style="width: 400px;">Image</th>
-                        <th>Product Name</th>
+                        <th style="width: 600px;">Product Name</th>
                         <th>Quantity</th>
                         <th>Action</th>
                     </tr>

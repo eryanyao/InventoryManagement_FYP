@@ -38,6 +38,8 @@
                         <th>Image</th>
                         <th>SKU</th>
                         <th>Name</th>
+                        <th>Category</th>
+                        <th>Brand</th>
                         <th>Price</th>
                         <th>Quantity</th>
                         <th>Status</th>
@@ -60,6 +62,12 @@
                                 </td>
                                 <td>
                                     <asp:Label Text='<%# Eval("product_name")%>' runat="server" />
+                                </td>
+                                <td>
+                                     <asp:Label Text='<%# Eval("product_category")%>' runat="server" />
+                                </td>
+                                <td>
+                                     <asp:Label Text='<%# Eval("product_brand")%>' runat="server" />
                                 </td>
                                 <td>
                                     <asp:Label Text='<%# Eval("product_price")%>' runat="server" />
