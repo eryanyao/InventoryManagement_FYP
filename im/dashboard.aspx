@@ -84,12 +84,16 @@
                                 DataSourceID="sqlYear" DataTextField="year" DataValueField="year" Width="150px">
                             </asp:DropDownList>
                         </td>
+                        <td>&nbsp;</td>
                         <td><strong>Month</strong></td>
                         <td>
                             <asp:DropDownList ID="ddlMonth" runat="server" CssClass="w3-input w3-border w3-border-dark-gray"
                                 DataSourceID="sqlMonth" DataTextField="month" DataValueField="Id" Width="150px">
                             </asp:DropDownList>
-                            <td>
+                            </td>
+                                <td>&nbsp;</td>
+                                <td>
+
                                 <asp:Button ID="btnDateSubmit" Text="Submit" CssClass="w3-button w3-border w3-green"
                                     runat="server" OnClick="btnDateSubmit_Click" /></td>
                     </tr>

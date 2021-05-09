@@ -28,6 +28,7 @@ public partial class im_MasterPage : System.Web.UI.MasterPage
     protected void btnLogout_Click(object sender, EventArgs e)
     {
         Session.Clear();
-        Response.Redirect("/login.aspx");
+        Response.Write("<script>alert('Logout Successfully.');location.href='/login.aspx';</script>");
+        
     }
 }
