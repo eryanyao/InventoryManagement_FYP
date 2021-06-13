@@ -4,10 +4,8 @@
 - Tools: **Visual Studio 2015, Github**
 - Poster: [Poster.pdf](https://github.com/eryanyao/InventoryManagement_FYP/files/6643300/Poster.pdf)
 - Documentation: [Report.pdf](https://github.com/eryanyao/InventoryManagement_FYP/files/6643307/Report.pdf)
-
-
 <br><br>
-The database all contain in the github. For more details, you can refer poster and documentation attach at the top.\
+The database all contain in the github. For more details, you can refer poster and documentation attach at the top.\\
 Once you downloaded the file, you need to use the visual studio to open the file.
 **starting at login.aspx**\
 username: admin\
