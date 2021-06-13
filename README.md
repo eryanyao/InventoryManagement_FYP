@@ -9,9 +9,10 @@
 The database all contain in the github. For more details, you can refer poster and documentation attach at the top.\
 Once you downloaded the file, you need to use the visual studio to open the file.
 
-**starting at login.aspx**\
-username: admin\
-password: admin
+**will starting at login.aspx**
+- username: **admin**
+- password: **admin**
+
 <br><br>
 
 ## Preview
