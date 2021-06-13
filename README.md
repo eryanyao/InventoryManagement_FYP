@@ -4,6 +4,6 @@
 - Tools: Visual Studio 2015, Github
 <br><br>
 
-**start at login.aspx**
-username: admin
+**starting at login.aspx**\
+username: admin\
 password: admin
