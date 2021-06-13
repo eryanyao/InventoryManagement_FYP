@@ -6,7 +6,7 @@
 - Documentation: [I18016358_ErYanYao_report.pdf](https://github.com/eryanyao/InventoryManagement_FYP/files/6643303/I18016358_ErYanYao_report.pdf)
 
 <br><br>
-The database all contain in the github. For more details, you can refer poster and documentation attach at the top.
+The database all contain in the github. For more details, you can refer poster and documentation attach at the top.\
 **starting at login.aspx**\
 username: admin\
 password: admin
