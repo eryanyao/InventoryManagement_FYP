@@ -12,7 +12,7 @@ username: admin\
 password: admin
 <br><br>
 
-## Image Preview
+## Preview
 1. Login Page (username: admin && password: admin)
 
 ![Screenshot (45)](https://user-images.githubusercontent.com/74011230/121796303-80792000-cc4a-11eb-8f82-55be97d8d9a1.png)
