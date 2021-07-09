@@ -165,7 +165,7 @@ public partial class im_dashboard : System.Web.UI.Page
 
     protected void btnDateSubmit_Click(object sender, EventArgs e)
     {
-        string url = "dashboard.aspx?y=" + ddlYear.SelectedValue + "&m=" + ddlMonth.SelectedValue;
+        string url = "dashboard.aspx?y=" + ddlYear.SelectedValue + "&m=" + ddlMonth.SelectedValue +"#sales";
         Response.Redirect(url);
     }
 

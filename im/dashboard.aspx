@@ -74,6 +74,96 @@
         margin-right: 20px; margin-top: 20px;"
         runat="server">
         <div class="w3-container">
+            <h2 class="w3-text-black"><strong>Out of Stocks</strong></h2>
+            <table class="w3-table w3-white w3-bordered">
+                <thead>
+                    <tr>
+                        <th style="width: 150px;">Product ID</th>
+                        <th style="width: 400px;">Image</th>
+                        <th style="width: 600px;">Product Name</th>
+                        <th>Quantity</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <asp:Repeater runat="server" DataSourceID="SqlOutOfStock">
+                        <ItemTemplate>
+                            <tr>
+                                <td>
+                                    <asp:Label Text='<%# Eval("Id")%>' runat="server" />
+                                </td>
+                                <td>
+                                    <asp:Image ImageUrl='<%# img(Eval("product_img").ToString())%>' Height="100px" runat="server" />
+                                </td>
+                                <td>
+                                    <asp:Label Text='<%# Eval("product_name")%>' runat="server" />
+                                </td>
+                                <td>
+                                    <asp:Label Text='<%# Eval("product_quantity")%>' runat="server" />
+                                </td>
+                                <td>
+                                    <asp:Button Text="Replenishment" CommandArgument='<%# Eval("id")%>' OnCommand="btnReplenish_Command"
+                                        CssClass="w3-blue w3-button w3-hover-red" runat="server" />
+                                </td>
+                            </tr>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </tbody>
+            </table>
+            <br />
+        </div>
+    </div>
+
+    <div class="w3-row-padding w3-margin-bottom w3-light-grey w3-border" style="margin-left: 20px;
+        margin-right: 20px; margin-top: 20px;"
+        runat="server">
+        <div class="w3-container">
+            <h2 class="w3-text-black"><strong>Low-level Stocks</strong></h2>
+            <table class="w3-table w3-white w3-bordered">
+                <thead>
+                    <tr>
+                        <th style="width: 150px;">Product ID</th>
+                        <th style="width: 400px;">Image</th>
+                        <th style="width: 600px;">Product Name</th>
+                        <th>Quantity</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <asp:Repeater runat="server" DataSourceID="SqlProduct">
+                        <ItemTemplate>
+                            <tr>
+                                <td>
+                                    <asp:Label Text='<%# Eval("Id")%>' runat="server" />
+                                </td>
+                                <td>
+                                    <asp:Image ImageUrl='<%# img(Eval("product_img").ToString())%>' Height="100px" runat="server" />
+                                </td>
+                                <td>
+                                    <asp:Label Text='<%# Eval("product_name")%>' runat="server" />
+                                </td>
+                                <td>
+                                    <asp:Label Text='<%# Eval("product_quantity")%>' runat="server" />
+                                </td>
+                                <td>
+                                    <asp:Button Text="Replenishment" ID="btnReplenish" CommandArgument='<%# Eval("id")%>'
+                                        OnCommand="btnReplenish_Command" CssClass="w3-blue w3-button w3-hover-red" runat="server" />
+                                </td>
+                            </tr>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </tbody>
+            </table>
+            <br />
+        </div>
+    </div>
+
+     <div class="w3-row-padding w3-margin-bottom w3-light-grey w3-border" style="margin-left: 20px;
+        margin-right: 20px; margin-top: 20px;"
+        runat="server">
+        <div id="sales" class="w3-container">
             <h2 class="w3-text-black"><strong>Sales Analysis</strong></h2>
             <div>
                 <table>
@@ -144,95 +234,7 @@
         </div>
     </div>
 
-    <div class="w3-row-padding w3-margin-bottom w3-light-grey w3-border" style="margin-left: 20px;
-        margin-right: 20px; margin-top: 20px;"
-        runat="server">
-        <div class="w3-container">
-            <h2 class="w3-text-black"><strong>Out of Stocks</strong></h2>
-            <table class="w3-table w3-white w3-bordered w3-hoverable w3-table-all">
-                <thead>
-                    <tr>
-                        <th style="width: 150px;">Product ID</th>
-                        <th style="width: 400px;">Image</th>
-                        <th style="width: 600px;">Product Name</th>
-                        <th>Quantity</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <asp:Repeater runat="server" DataSourceID="SqlOutOfStock">
-                        <ItemTemplate>
-                            <tr>
-                                <td>
-                                    <asp:Label Text='<%# Eval("Id")%>' runat="server" />
-                                </td>
-                                <td>
-                                    <asp:Image ImageUrl='<%# img(Eval("product_img").ToString())%>' Height="100px" runat="server" />
-                                </td>
-                                <td>
-                                    <asp:Label Text='<%# Eval("product_name")%>' runat="server" />
-                                </td>
-                                <td>
-                                    <asp:Label Text='<%# Eval("product_quantity")%>' runat="server" />
-                                </td>
-                                <td>
-                                    <asp:Button Text="Replenishment" CommandArgument='<%# Eval("id")%>' OnCommand="btnReplenish_Command"
-                                        CssClass="w3-blue w3-button" runat="server" />
-                                </td>
-                            </tr>
-                        </ItemTemplate>
-                    </asp:Repeater>
-                </tbody>
-            </table>
-            <br />
-        </div>
-    </div>
-
-    <div class="w3-row-padding w3-margin-bottom w3-light-grey w3-border" style="margin-left: 20px;
-        margin-right: 20px; margin-top: 20px;"
-        runat="server">
-        <div class="w3-container">
-            <h2 class="w3-text-black"><strong>Low-level Stocks</strong></h2>
-            <table class="w3-table w3-white w3-bordered w3-hoverable w3-table-all">
-                <thead>
-                    <tr>
-                        <th style="width: 150px;">Product ID</th>
-                        <th style="width: 400px;">Image</th>
-                        <th style="width: 600px;">Product Name</th>
-                        <th>Quantity</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <asp:Repeater runat="server" DataSourceID="SqlProduct">
-                        <ItemTemplate>
-                            <tr>
-                                <td>
-                                    <asp:Label Text='<%# Eval("Id")%>' runat="server" />
-                                </td>
-                                <td>
-                                    <asp:Image ImageUrl='<%# img(Eval("product_img").ToString())%>' Height="100px" runat="server" />
-                                </td>
-                                <td>
-                                    <asp:Label Text='<%# Eval("product_name")%>' runat="server" />
-                                </td>
-                                <td>
-                                    <asp:Label Text='<%# Eval("product_quantity")%>' runat="server" />
-                                </td>
-                                <td>
-                                    <asp:Button Text="Replenishment" ID="btnReplenish" CommandArgument='<%# Eval("id")%>'
-                                        OnCommand="btnReplenish_Command" CssClass="w3-blue w3-button" runat="server" />
-                                </td>
-                            </tr>
-                        </ItemTemplate>
-                    </asp:Repeater>
-                </tbody>
-            </table>
-            <br />
-        </div>
-    </div>
+   
 
     <asp:SqlDataSource runat="server" ID="SqlProduct" ConnectionString="<%$ ConnectionStrings:connStr %>"
         SelectCommand="SELECT * FROM product WHERE product_quantity <= 5 AND product_quantity >= 1" />
